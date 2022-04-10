@@ -1,4 +1,4 @@
-package Gem;
+package ua.lviv.iot.Gem;
 
 public enum Hardness {
     SOFT,

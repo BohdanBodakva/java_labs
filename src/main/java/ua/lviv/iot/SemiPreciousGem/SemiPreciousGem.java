@@ -1,7 +1,7 @@
-package SemiPreciousGem;
+package ua.lviv.iot.SemiPreciousGem;
 
-
-import Gem.*;
+import ua.lviv.iot.Gem.Gem;
+import ua.lviv.iot.Gem.Hardness;
 
 public class SemiPreciousGem extends Gem {
     private String sort;
@@ -15,22 +15,22 @@ public class SemiPreciousGem extends Gem {
         return minerality;
     }
 
-    public SemiPreciousGem(String sort, MineralityOfSemiPreciousGem minerality, PurityOfGem purity,
-                           double weight, Hardness hardness, int price){
-        super(weight, hardness, purity, price);
+    public SemiPreciousGem(String sort, MineralityOfSemiPreciousGem minerality, double purity,
+                           double weightInCarats, Hardness hardness, int price){
+        super(weightInCarats, hardness, purity, price);
         this.sort = sort;
         this.minerality = minerality;
     }
 
     @Override
     public String toString() {
-        return "SemiPreciousGem {" +
+        return "\nSemiPreciousGem {" +
                 "sort=" + sort +
-                ",\tminerality=" + minerality +
                 ",\tweight=" + super.getWeight() +
-                ",\thardness=" + super.getHardness() +
+                " carats,\thardness=" + super.getHardness() +
                 ",\tprice=" + super.getPrice() +
                 " usd,\tpurity=" + super.getPurity() +
-                '}';
+                ",\tminerality=" + minerality +
+                "}";
     }
 }

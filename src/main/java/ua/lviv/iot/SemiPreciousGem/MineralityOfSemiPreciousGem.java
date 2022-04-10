@@ -1,4 +1,4 @@
-package SemiPreciousGem;
+package ua.lviv.iot.SemiPreciousGem;
 
 public enum MineralityOfSemiPreciousGem {
     MINERAL,
