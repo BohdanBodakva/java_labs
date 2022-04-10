@@ -1,13 +1,13 @@
 package Gem;
 
 public abstract class Gem {
-    private double weight;
+    private double weightInCarats;
     private Hardness hardness;
     private int price;
-    private PurityOfGem purity;
+    private double purity;
 
     public double getWeight() {
-        return weight;
+        return weightInCarats;
     }
 
     public Hardness getHardness() {
@@ -18,14 +18,22 @@ public abstract class Gem {
         return price;
     }
 
-    public PurityOfGem getPurity() {
+    public double getPurity() {
         return purity;
     }
 
-    public Gem(double weight, Hardness hardness, PurityOfGem purity, int price) {
-        this.weight = weight;
+    public Gem(double weightInCarats, Hardness hardness, double purity, int price) {
+        this.weightInCarats = weightInCarats;
         this.hardness = hardness;
         this.price = price;
         this.purity = purity;
+        this.cost = weightInCarats * price;
+    }
+
+    //only for sorting
+    private double cost;
+
+    public double getCost() {
+        return cost;
     }
 }
