@@ -1,4 +1,4 @@
-# Lab3
+# Lab4
 
 Stones. Determine the hierarchy of precious and semiprecious stones. Select stones for necklaces. Search for stones in the necklace that match the specified range of transparency parameters.
 Implement the ability to sort found products:
@@ -20,4 +20,16 @@ Task description
 - Sorting should be implemented in a separate method
 - The code does not contain static methods / attributes. Only one static method is allowed - void
 - Code must use enum type (if necessary)
+
+
+
+
+Convert the project with code 2-3 so that its assembly can be used with maven.
+At the same time it is necessary to make the command of merging of previous works in master
+Important: Build the project with the mvn clean package console command
+
+You can generate pom.xml using the maven command (console research):
+
+mvn archetype:generate -DgroupId=ua.lviv.iot -DartifactId=work -Dversion=1.0-SNAPSHOT -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.0 -DinteractiveMode=false
+
 
