@@ -20,3 +20,4 @@ Task description
 - Sorting should be implemented in a separate method
 - The code does not contain static methods / attributes. Only one static method is allowed - void
 - Code must use enum type (if necessary)
+

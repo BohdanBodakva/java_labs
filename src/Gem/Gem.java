@@ -1,8 +1,5 @@
 package Gem;
 
-
-
-
 public abstract class Gem {
     private double weightInCarats;
     private Hardness hardness;
