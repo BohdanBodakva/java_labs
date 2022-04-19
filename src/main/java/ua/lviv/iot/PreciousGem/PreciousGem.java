@@ -3,6 +3,8 @@ package ua.lviv.iot.PreciousGem;
 import ua.lviv.iot.Gem.Gem;
 import ua.lviv.iot.Gem.Hardness;
 
+import java.util.Objects;
+
 public class PreciousGem extends Gem {
     private SortOfPreciousGem sort;
 
@@ -20,10 +22,10 @@ public class PreciousGem extends Gem {
     public String toString() {
         return "\nPreciousGem {" +
                 "sort=" + sort +
-                ",\tweight=" + super.getWeight() +
-                " carats,\thardness=" + super.getHardness() +
-                ",\tprice=" + super.getPrice() +
-                " usd,\tpurity=" + super.getPurity() +
+                ",\tweight=" + getWeight() +
+                " carats,\thardness=" + getHardness() +
+                ",\tprice=" + getPrice() +
+                " usd,\tpurity=" + getPurity() +
                 "}";
     }
 

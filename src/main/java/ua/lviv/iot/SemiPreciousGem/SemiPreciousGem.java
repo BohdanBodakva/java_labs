@@ -3,6 +3,8 @@ package ua.lviv.iot.SemiPreciousGem;
 import ua.lviv.iot.Gem.Gem;
 import ua.lviv.iot.Gem.Hardness;
 
+import java.util.Objects;
+
 public class SemiPreciousGem extends Gem {
     private String sort;
     private MineralityOfSemiPreciousGem minerality;
@@ -26,10 +28,10 @@ public class SemiPreciousGem extends Gem {
     public String toString() {
         return "\nSemiPreciousGem {" +
                 "sort=" + sort +
-                ",\tweight=" + super.getWeight() +
-                " carats,\thardness=" + super.getHardness() +
-                ",\tprice=" + super.getPrice() +
-                " usd,\tpurity=" + super.getPurity() +
+                ",\tweight=" + getWeight() +
+                " carats,\thardness=" + getHardness() +
+                ",\tprice=" + getPrice() +
+                " usd,\tpurity=" + getPurity() +
                 ",\tminerality=" + minerality +
                 "}";
     }

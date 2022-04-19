@@ -11,14 +11,14 @@ public class GemsManager {
 
     private class Necklace{
         private int currentPrice;
-        public int getCurrentPrice() {
+        private int getCurrentPrice() {
             return currentPrice;
         }
-        public void setCurrentPrice(int currentPrice) {
+        private void setCurrentPrice(int currentPrice) {
             this.currentPrice = currentPrice;
         }
 
-        List<Gem> necklace = new ArrayList<>();
+        List<Gem> neckList = new ArrayList<>();
 
         private Necklace(int currentPrice){
             this.currentPrice = currentPrice;
@@ -27,7 +27,7 @@ public class GemsManager {
 
     private Necklace necklace;
 
-    public void makeNecklace(List<Gem> list, int aboveThePrice) throws Exception {
+    public List<Gem> makeNecklace(List<Gem> list, int aboveThePrice) throws Exception {
         if(necklace != null)
             throw new Exception("You cannot make more than one necklace!");
 
@@ -35,44 +35,64 @@ public class GemsManager {
 
         for(Gem gem : list)
             if (gem.getPrice() > aboveThePrice)
-                necklace.necklace.add(gem);
+                necklace.neckList.add(gem);
 
+
+        return necklace.neckList;
 
     }
 
-    public void printNecklace(){
-        necklace.necklace.forEach(System.out::println);
+    public List<Gem> printNecklace() throws Exception {
+        if(necklace == null)
+            throw new Exception("Firstly you must make a necklace!");
+
+        necklace.neckList.forEach(System.out::println);
+
+        return necklace.neckList;
     }
 
-    public void printPriceInNeckLace() throws Exception {
+    public int printPriceInNeckLace() throws Exception {
         if(necklace == null)
             throw new Exception("Firstly you must make a necklace!");
         System.out.println("Necklace MIN gems price: " + necklace.currentPrice + " usd");
+
+        return necklace.getCurrentPrice();
     }
 
-    public void addGemToNecklace(Gem gem) throws Exception {
+    public List<Gem> addGemToNecklace(Gem gem) throws Exception {
         if(necklace == null)
             throw new Exception("Firstly you must make a necklace!");
 
-        if(gem.getPrice() >= necklace.getCurrentPrice())
-            necklace.necklace.add(gem);
-        else
-            System.out.println("You can add only gems with price higher than " + necklace.getCurrentPrice());
+        if(gem.getPrice() >= necklace.getCurrentPrice()){
+            necklace.neckList.add(gem);
+
+            return necklace.neckList;
+        }else{
+            System.out.println("Gem was not added to necklace, because its price is lower than in necklace");
+
+            return necklace.neckList;
+        }
 
     }
 
-    public void setPriceInNecklace(int price) throws Exception {
+    public int setPriceInNecklace(int price) throws Exception {
         if(necklace == null)
             throw new Exception("Firstly you must make a necklace!");
-        if(price >= necklace.getCurrentPrice())
+        if(price <= necklace.getCurrentPrice())
             necklace.setCurrentPrice(price);
         else
-            System.out.println("You cannot set smaller price that " + necklace.getCurrentPrice());
+            System.out.println("You cannot set higher price that " + necklace.getCurrentPrice()
+                                + ", because some gems will be removed from necklace");
 
+
+        return necklace.getCurrentPrice();
     }
 
-    public List<Gem> findInNecklaceByPurity(double from, double to){
-        return necklace.necklace.stream().
+    public List<Gem> findInNecklaceByPurity(double from, double to) throws Exception {
+        if(necklace == null)
+            throw new Exception("Firstly you must make a necklace!");
+
+        return necklace.neckList.stream().
                 filter(gem -> gem.getPurity() >= from && gem.getPurity() <= to).
                 collect(Collectors.toList());
     }

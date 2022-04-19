@@ -29,9 +29,8 @@ public class Main {
         GemsManager manager = new GemsManager();
 
         System.out.println(manager.sortByCostDesc(gemlist));
-        //System.out.println(manager.sortByCostDesc(gemlist));
 
-        //System.out.println(manager.sortByWeightAsc(gemlist));
+        System.out.println(manager.sortByWeightAsc(gemlist));
 
     }
 }

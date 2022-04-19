@@ -1,4 +1,5 @@
-# Lab4
+# Lab5
+
 
 Stones. Determine the hierarchy of precious and semiprecious stones. Select stones for necklaces. Search for stones in the necklace that match the specified range of transparency parameters.
 Implement the ability to sort found products:
@@ -32,4 +33,6 @@ You can generate pom.xml using the maven command (console research):
 
 mvn archetype:generate -DgroupId=ua.lviv.iot -DartifactId=work -Dversion=1.0-SNAPSHOT -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.0 -DinteractiveMode=false
 
-
+It is necessary to write modular tests for the code of laboratory previous tasks and to reach a level of coverage by tests of 80%. Obviously, the ideal 
+coverage is 100% (ie each line of code is covered by tests). It is also obvious that writing tests takes a considerable amount of time, which is always lacking. One way 
+to avoid this problem is the TDD approach. For this laboratory compromise value will be coverage by tests at the level of 80%
