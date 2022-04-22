@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import ua.lviv.iot.Exceptions.MakeMoreThanOneNecklaceException;
+import ua.lviv.iot.Exceptions.NecklaceDoesNotExistException;
 import ua.lviv.iot.Gem.Gem;
 import ua.lviv.iot.Gem.Hardness;
 import ua.lviv.iot.PreciousGem.PreciousGem;
@@ -39,20 +41,20 @@ public class GemsManagerTest {
     }
 
     @Test
-    public void testMakeNecklace() throws Exception {
+    public void testMakeNecklace() throws MakeMoreThanOneNecklaceException {
         List<Gem> expectedList = Arrays.asList(list.get(0), list.get(1), list.get(2));
 
         GemsManager manager = new GemsManager();
 
         Assertions.assertEquals(expectedList, manager.makeNecklace(list, 7000));
 
-        Assertions.assertThrows(Exception.class, () ->
+        Assertions.assertThrows(MakeMoreThanOneNecklaceException.class, () ->
             manager.makeNecklace(list, 10000)
         );
     }
 
     @Test
-    public void testAddGemToNecklace() throws Exception {
+    public void testAddGemToNecklace() throws NecklaceDoesNotExistException, MakeMoreThanOneNecklaceException {
         Gem g1 = new PreciousGem(SortOfPreciousGem.Emerald, 17.4,
                 7.8, Hardness.HARD, 6000);
         Gem g2 = new PreciousGem(SortOfPreciousGem.Ruby, 1.4,
@@ -61,7 +63,7 @@ public class GemsManagerTest {
 
         GemsManager manager = new GemsManager();
 
-        Assertions.assertThrows(Exception.class, () ->
+        Assertions.assertThrows(NecklaceDoesNotExistException.class, () ->
                 manager.addGemToNecklace(g1)
         );
 
@@ -76,10 +78,10 @@ public class GemsManagerTest {
 
 
     @Test
-    public void testPrintPriceInNecklace() throws Exception {
+    public void testPrintPriceInNecklace() throws NecklaceDoesNotExistException, MakeMoreThanOneNecklaceException {
         GemsManager manager = new GemsManager();
 
-        Assertions.assertThrows(Exception.class, () ->
+        Assertions.assertThrows(NecklaceDoesNotExistException.class, () ->
                 manager.printPriceInNeckLace()
             );
 
@@ -89,10 +91,10 @@ public class GemsManagerTest {
     }
 
     @Test
-    public void testPrintNecklace() throws Exception {
+    public void testPrintNecklace() throws NecklaceDoesNotExistException, MakeMoreThanOneNecklaceException {
         GemsManager manager = new GemsManager();
 
-        Assertions.assertThrows(Exception.class, () ->
+        Assertions.assertThrows(NecklaceDoesNotExistException.class, () ->
                 manager.printNecklace()
             );
 
@@ -103,10 +105,10 @@ public class GemsManagerTest {
     }
 
     @Test
-    public void testSetPriceInNecklace() throws Exception {
+    public void testSetPriceInNecklace() throws NecklaceDoesNotExistException, MakeMoreThanOneNecklaceException {
         GemsManager manager = new GemsManager();
 
-        Assertions.assertThrows(Exception.class, () ->
+        Assertions.assertThrows(NecklaceDoesNotExistException.class, () ->
                 manager.setPriceInNecklace(8000)
             );
 
@@ -119,10 +121,10 @@ public class GemsManagerTest {
 
 
     @Test
-    public void testFindInNecklaceByPurity() throws Exception {
+    public void testFindInNecklaceByPurity() throws NecklaceDoesNotExistException, MakeMoreThanOneNecklaceException {
         GemsManager manager = new GemsManager();
 
-        Assertions.assertThrows(Exception.class, () ->
+        Assertions.assertThrows(NecklaceDoesNotExistException.class, () ->
                 manager.findInNecklaceByPurity(6, 9)
             );
 

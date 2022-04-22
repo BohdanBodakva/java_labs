@@ -1,5 +1,7 @@
 package ua.lviv.iot.Main;
 
+import ua.lviv.iot.Exceptions.MakeMoreThanOneNecklaceException;
+import ua.lviv.iot.Exceptions.NecklaceDoesNotExistException;
 import ua.lviv.iot.Gem.Gem;
 import ua.lviv.iot.Gem.Hardness;
 import ua.lviv.iot.GemsManager.GemsManager;
@@ -12,7 +14,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws MakeMoreThanOneNecklaceException, NecklaceDoesNotExistException {
         Gem gem3 = new SemiPreciousGem("quartz", MineralityOfSemiPreciousGem.MINERAL,
                 6.0, 0.4, Hardness.HARD, 7500);
         Gem gem4 = new SemiPreciousGem("aquamarine", MineralityOfSemiPreciousGem.NON_MINERAL,
@@ -31,6 +33,10 @@ public class Main {
         System.out.println(manager.sortByCostDesc(gemlist));
 
         System.out.println(manager.sortByWeightAsc(gemlist));
+
+        manager.makeNecklace(gemlist, 7000);
+
+        manager.addGemToNecklace(gem2);
 
     }
 }

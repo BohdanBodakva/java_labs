@@ -1,5 +1,7 @@
 package ua.lviv.iot.GemsManager;
 
+import ua.lviv.iot.Exceptions.MakeMoreThanOneNecklaceException;
+import ua.lviv.iot.Exceptions.NecklaceDoesNotExistException;
 import ua.lviv.iot.Gem.Gem;
 
 import java.util.ArrayList;
@@ -27,9 +29,9 @@ public class GemsManager {
 
     private Necklace necklace;
 
-    public List<Gem> makeNecklace(List<Gem> list, int aboveThePrice) throws Exception {
+    public List<Gem> makeNecklace(List<Gem> list, int aboveThePrice) throws MakeMoreThanOneNecklaceException {
         if(necklace != null)
-            throw new Exception("You cannot make more than one necklace!");
+            throw new MakeMoreThanOneNecklaceException();
 
         necklace = new Necklace(aboveThePrice);
 
@@ -42,26 +44,26 @@ public class GemsManager {
 
     }
 
-    public List<Gem> printNecklace() throws Exception {
+    public List<Gem> printNecklace() throws NecklaceDoesNotExistException {
         if(necklace == null)
-            throw new Exception("Firstly you must make a necklace!");
+            throw new NecklaceDoesNotExistException();
 
         necklace.neckList.forEach(System.out::println);
 
         return necklace.neckList;
     }
 
-    public int printPriceInNeckLace() throws Exception {
+    public int printPriceInNeckLace() throws NecklaceDoesNotExistException {
         if(necklace == null)
-            throw new Exception("Firstly you must make a necklace!");
+            throw new NecklaceDoesNotExistException();
         System.out.println("Necklace MIN gems price: " + necklace.currentPrice + " usd");
 
         return necklace.getCurrentPrice();
     }
 
-    public List<Gem> addGemToNecklace(Gem gem) throws Exception {
+    public List<Gem> addGemToNecklace(Gem gem) throws NecklaceDoesNotExistException {
         if(necklace == null)
-            throw new Exception("Firstly you must make a necklace!");
+            throw new NecklaceDoesNotExistException();
 
         if(gem.getPrice() >= necklace.getCurrentPrice()){
             necklace.neckList.add(gem);
@@ -75,9 +77,9 @@ public class GemsManager {
 
     }
 
-    public int setPriceInNecklace(int price) throws Exception {
+    public int setPriceInNecklace(int price) throws NecklaceDoesNotExistException {
         if(necklace == null)
-            throw new Exception("Firstly you must make a necklace!");
+            throw new NecklaceDoesNotExistException();
         if(price <= necklace.getCurrentPrice())
             necklace.setCurrentPrice(price);
         else
@@ -88,9 +90,9 @@ public class GemsManager {
         return necklace.getCurrentPrice();
     }
 
-    public List<Gem> findInNecklaceByPurity(double from, double to) throws Exception {
+    public List<Gem> findInNecklaceByPurity(double from, double to) throws NecklaceDoesNotExistException {
         if(necklace == null)
-            throw new Exception("Firstly you must make a necklace!");
+            throw new NecklaceDoesNotExistException();
 
         return necklace.neckList.stream().
                 filter(gem -> gem.getPurity() >= from && gem.getPurity() <= to).
