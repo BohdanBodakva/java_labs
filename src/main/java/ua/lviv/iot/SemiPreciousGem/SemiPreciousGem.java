@@ -35,4 +35,16 @@ public class SemiPreciousGem extends Gem {
                 ",\tminerality=" + minerality +
                 "}";
     }
+
+    @Override
+    public String getHeaders(){
+        return "sort;"+super.getHeaders()+";minerality";
+    }
+
+    @Override
+    public String toCSV(){
+        return sort+";"+super.toCSV()+";"+minerality;
+    }
+
+
 }

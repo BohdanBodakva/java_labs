@@ -29,5 +29,14 @@ public class PreciousGem extends Gem {
                 "}";
     }
 
+    @Override
+    public String getHeaders(){
+        return "sort;"+super.getHeaders();
+    }
+
+    @Override
+    public String toCSV(){
+        return sort+";"+super.toCSV();
+    }
 
 }

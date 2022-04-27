@@ -40,4 +40,14 @@ public abstract class Gem {
     }
 
 
+    public String getHeaders(){
+        return "weightInCarats;hardness;price;purity";
+    }
+
+
+    public String toCSV(){
+        return String.format("%.3f;%s;%d;%.3f", weightInCarats, hardness, price, purity);
+    }
+
+
 }

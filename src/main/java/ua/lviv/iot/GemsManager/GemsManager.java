@@ -1,5 +1,6 @@
 package ua.lviv.iot.GemsManager;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import ua.lviv.iot.Exceptions.MakeMoreThanOneNecklaceException;
 import ua.lviv.iot.Exceptions.NecklaceDoesNotExistException;
 import ua.lviv.iot.Gem.Gem;
