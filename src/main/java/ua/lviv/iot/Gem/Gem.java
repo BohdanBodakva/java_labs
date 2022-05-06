@@ -1,5 +1,7 @@
 package ua.lviv.iot.Gem;
 
+import java.util.Objects;
+
 public abstract class Gem {
     private double weightInCarats;
     private Hardness hardness;
@@ -36,4 +38,16 @@ public abstract class Gem {
     public double getCost() {
         return cost;
     }
+
+
+    public String getHeaders(){
+        return "weightInCarats;hardness;price;purity";
+    }
+
+
+    public String toCSV(){
+        return String.format("%.3f;%s;%d;%.3f", weightInCarats, hardness, price, purity);
+    }
+
+
 }

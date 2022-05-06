@@ -1,5 +1,8 @@
 package ua.lviv.iot.GemsManager;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import ua.lviv.iot.Exceptions.MakeMoreThanOneNecklaceException;
+import ua.lviv.iot.Exceptions.NecklaceDoesNotExistException;
 import ua.lviv.iot.Gem.Gem;
 
 import java.util.ArrayList;
@@ -18,61 +21,81 @@ public class GemsManager {
             this.currentPrice = currentPrice;
         }
 
-        List<Gem> necklace = new ArrayList<>();
+        List<Gem> necklaseList = new ArrayList<>();
 
-        private Necklace(int currentPrice){
+        public Necklace(int currentPrice){
             this.currentPrice = currentPrice;
         }
     }
 
     private Necklace necklace;
 
-    public void makeNecklace(List<Gem> list, int aboveThePrice) throws Exception {
+    public List<Gem> makeNecklace(List<Gem> list, int aboveThePrice) throws MakeMoreThanOneNecklaceException {
         if(necklace != null)
-            throw new Exception("You cannot make more than one necklace!");
+            throw new MakeMoreThanOneNecklaceException();
 
         necklace = new Necklace(aboveThePrice);
 
         for(Gem gem : list)
             if (gem.getPrice() > aboveThePrice)
-                necklace.necklace.add(gem);
+                necklace.necklaseList.add(gem);
 
+
+        return necklace.necklaseList;
 
     }
 
-    public void printNecklace(){
-        necklace.necklace.forEach(System.out::println);
-    }
-
-    public void printPriceInNeckLace() throws Exception {
+    public List<Gem> printNecklace() throws NecklaceDoesNotExistException {
         if(necklace == null)
-            throw new Exception("Firstly you must make a necklace!");
+            throw new NecklaceDoesNotExistException();
+
+        necklace.necklaseList.forEach(System.out::println);
+
+        return necklace.necklaseList;
+    }
+
+    public int printPriceInNeckLace() throws NecklaceDoesNotExistException {
+        if(necklace == null)
+            throw new NecklaceDoesNotExistException();
         System.out.println("Necklace MIN gems price: " + necklace.currentPrice + " usd");
+
+        return necklace.getCurrentPrice();
     }
 
-    public void addGemToNecklace(Gem gem) throws Exception {
+    public List<Gem> addGemToNecklace(Gem gem) throws NecklaceDoesNotExistException {
         if(necklace == null)
-            throw new Exception("Firstly you must make a necklace!");
+            throw new NecklaceDoesNotExistException();
 
-        if(gem.getPrice() >= necklace.getCurrentPrice())
-            necklace.necklace.add(gem);
-        else
-            System.out.println("You can add only gems with price higher than " + necklace.getCurrentPrice());
+        if(gem.getPrice() >= necklace.getCurrentPrice()){
+            necklace.necklaseList.add(gem);
+
+            return necklace.necklaseList;
+        }else{
+            System.out.println("Gem was not added to necklace, because its price is lower than in necklace");
+
+            return necklace.necklaseList;
+        }
 
     }
 
-    public void setPriceInNecklace(int price) throws Exception {
+    public int setPriceInNecklace(int price) throws NecklaceDoesNotExistException {
         if(necklace == null)
-            throw new Exception("Firstly you must make a necklace!");
-        if(price >= necklace.getCurrentPrice())
+            throw new NecklaceDoesNotExistException();
+        if(price <= necklace.getCurrentPrice())
             necklace.setCurrentPrice(price);
         else
-            System.out.println("You cannot set smaller price that " + necklace.getCurrentPrice());
+            System.out.println("You cannot set higher price that " + necklace.getCurrentPrice()
+                                + ", because some gems will be removed from necklace");
 
+
+        return necklace.getCurrentPrice();
     }
 
-    public List<Gem> findInNecklaceByPurity(double from, double to){
-        return necklace.necklace.stream().
+    public List<Gem> findInNecklaceByPurity(double from, double to) throws NecklaceDoesNotExistException {
+        if(necklace == null)
+            throw new NecklaceDoesNotExistException();
+
+        return necklace.necklaseList.stream().
                 filter(gem -> gem.getPurity() >= from && gem.getPurity() <= to).
                 collect(Collectors.toList());
     }
