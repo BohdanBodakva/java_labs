@@ -1,18 +1,21 @@
-package ua.lviv.iot.GemsWriter;
+package ua.lviv.iot.lab5_6.GemsWriter;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import ua.lviv.iot.Gem.Gem;
-import ua.lviv.iot.Gem.Hardness;
-import ua.lviv.iot.PreciousGem.PreciousGem;
-import ua.lviv.iot.PreciousGem.SortOfPreciousGem;
-import ua.lviv.iot.SemiPreciousGem.MineralityOfSemiPreciousGem;
-import ua.lviv.iot.SemiPreciousGem.SemiPreciousGem;
 
-import java.io.*;
+import ua.lviv.iot.lab5_6.Gem.Gem;
+import ua.lviv.iot.lab5_6.Gem.Hardness;
+import ua.lviv.iot.lab5_6.PreciousGem.PreciousGem;
+import ua.lviv.iot.lab5_6.PreciousGem.SortOfPreciousGem;
+import ua.lviv.iot.lab5_6.SemiPreciousGem.MineralityOfSemiPreciousGem;
+import ua.lviv.iot.lab5_6.SemiPreciousGem.SemiPreciousGem;
+
+import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 

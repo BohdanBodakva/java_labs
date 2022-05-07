@@ -1,9 +1,8 @@
-package ua.lviv.iot.GemsManager;
+package ua.lviv.iot.lab5_6.GemsManager;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import ua.lviv.iot.Exceptions.MakeMoreThanOneNecklaceException;
-import ua.lviv.iot.Exceptions.NecklaceDoesNotExistException;
-import ua.lviv.iot.Gem.Gem;
+import ua.lviv.iot.lab5_6.Exceptions.MakeMoreThanOneNecklaceException;
+import ua.lviv.iot.lab5_6.Exceptions.NecklaceDoesNotExistException;
+import ua.lviv.iot.lab5_6.Gem.Gem;
 
 import java.util.ArrayList;
 import java.util.Comparator;

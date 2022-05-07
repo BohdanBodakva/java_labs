@@ -1,17 +1,15 @@
-package ua.lviv.iot.Main;
+package ua.lviv.iot.lab5_6.Main;
 
-import ua.lviv.iot.Exceptions.MakeMoreThanOneNecklaceException;
-import ua.lviv.iot.Exceptions.NecklaceDoesNotExistException;
-import ua.lviv.iot.Gem.Gem;
-import ua.lviv.iot.Gem.Hardness;
-import ua.lviv.iot.GemsManager.GemsManager;
-import ua.lviv.iot.GemsWriter.GemsWriter;
-import ua.lviv.iot.PreciousGem.PreciousGem;
-import ua.lviv.iot.PreciousGem.SortOfPreciousGem;
-import ua.lviv.iot.SemiPreciousGem.MineralityOfSemiPreciousGem;
-import ua.lviv.iot.SemiPreciousGem.SemiPreciousGem;
+import ua.lviv.iot.lab5_6.Exceptions.MakeMoreThanOneNecklaceException;
+import ua.lviv.iot.lab5_6.Exceptions.NecklaceDoesNotExistException;
+import ua.lviv.iot.lab5_6.Gem.Gem;
+import ua.lviv.iot.lab5_6.Gem.Hardness;
+import ua.lviv.iot.lab5_6.GemsManager.GemsManager;
+import ua.lviv.iot.lab5_6.PreciousGem.PreciousGem;
+import ua.lviv.iot.lab5_6.PreciousGem.SortOfPreciousGem;
+import ua.lviv.iot.lab5_6.SemiPreciousGem.MineralityOfSemiPreciousGem;
+import ua.lviv.iot.lab5_6.SemiPreciousGem.SemiPreciousGem;
 
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 

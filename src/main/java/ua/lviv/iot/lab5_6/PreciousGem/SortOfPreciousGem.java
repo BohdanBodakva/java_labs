@@ -1,4 +1,4 @@
-package ua.lviv.iot.PreciousGem;
+package ua.lviv.iot.lab5_6.PreciousGem;
 
 public enum SortOfPreciousGem {
     Diamond,
