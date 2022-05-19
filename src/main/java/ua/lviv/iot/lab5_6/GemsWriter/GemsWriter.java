@@ -1,8 +1,7 @@
-package ua.lviv.iot.GemsWriter;
+package ua.lviv.iot.lab5_6.GemsWriter;
 
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import ua.lviv.iot.Gem.Gem;
+import ua.lviv.iot.lab5_6.Gem.Gem;
 
 import java.io.File;
 import java.io.FileWriter;

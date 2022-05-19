@@ -1,13 +1,11 @@
-package ua.lviv.iot.Gem;
-
-import java.util.Objects;
+package ua.lviv.iot.lab5_6.Gem;
 
 public abstract class Gem {
     private double weightInCarats;
     private Hardness hardness;
+
     private int price;
     private double purity;
-
     public double getWeight() {
         return weightInCarats;
     }

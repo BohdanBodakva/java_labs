@@ -1,21 +1,17 @@
-package ua.lviv.iot.GemsManager;
-
+package ua.lviv.iot.lab5_6.GemsManager;
 
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
-import ua.lviv.iot.Exceptions.MakeMoreThanOneNecklaceException;
-import ua.lviv.iot.Exceptions.NecklaceDoesNotExistException;
-import ua.lviv.iot.Gem.Gem;
-import ua.lviv.iot.Gem.Hardness;
-import ua.lviv.iot.PreciousGem.PreciousGem;
-import ua.lviv.iot.PreciousGem.SortOfPreciousGem;
-import ua.lviv.iot.SemiPreciousGem.MineralityOfSemiPreciousGem;
-import ua.lviv.iot.SemiPreciousGem.SemiPreciousGem;
-
-
+import ua.lviv.iot.lab5_6.Exceptions.MakeMoreThanOneNecklaceException;
+import ua.lviv.iot.lab5_6.Exceptions.NecklaceDoesNotExistException;
+import ua.lviv.iot.lab5_6.Gem.Gem;
+import ua.lviv.iot.lab5_6.Gem.Hardness;
+import ua.lviv.iot.lab5_6.PreciousGem.PreciousGem;
+import ua.lviv.iot.lab5_6.PreciousGem.SortOfPreciousGem;
+import ua.lviv.iot.lab5_6.SemiPreciousGem.MineralityOfSemiPreciousGem;
+import ua.lviv.iot.lab5_6.SemiPreciousGem.SemiPreciousGem;
 
 import java.util.ArrayList;
 import java.util.Arrays;

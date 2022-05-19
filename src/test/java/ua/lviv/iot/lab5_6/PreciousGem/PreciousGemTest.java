@@ -1,9 +1,10 @@
-package ua.lviv.iot.PreciousGem;
+package ua.lviv.iot.lab5_6.PreciousGem;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
+
 import org.junit.jupiter.api.Test;
-import ua.lviv.iot.Gem.Hardness;
+
+import ua.lviv.iot.lab5_6.Gem.Hardness;
 
 public class PreciousGemTest {
 

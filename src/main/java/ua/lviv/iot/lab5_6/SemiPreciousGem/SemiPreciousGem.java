@@ -1,9 +1,7 @@
-package ua.lviv.iot.SemiPreciousGem;
+package ua.lviv.iot.lab5_6.SemiPreciousGem;
 
-import ua.lviv.iot.Gem.Gem;
-import ua.lviv.iot.Gem.Hardness;
-
-import java.util.Objects;
+import ua.lviv.iot.lab5_6.Gem.Gem;
+import ua.lviv.iot.lab5_6.Gem.Hardness;
 
 public class SemiPreciousGem extends Gem {
     private String sort;

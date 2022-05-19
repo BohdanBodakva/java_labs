@@ -1,4 +1,4 @@
-package ua.lviv.iot.Exceptions;
+package ua.lviv.iot.lab5_6.Exceptions;
 
 public class NecklaceDoesNotExistException extends Exception{
     public NecklaceDoesNotExistException(){
