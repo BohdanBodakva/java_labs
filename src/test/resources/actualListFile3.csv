@@ -1,6 +1,0 @@
-SemiPreciousGems:
-sort;weightInCarats;hardness;price;purity;minerality
-Quartz;0,400;HARD;7500;6,000;MINERAL
-Aquamarine;2,500;SOFT;2500;1,400;NON_MINERAL
-Moonstone;4,000;SOFT;14500;0,250;MINERAL
-Amazonite;2,510;SEMI_HARD;11490;7,480;NON_MINERAL
