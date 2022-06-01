@@ -77,9 +77,11 @@ public class GemService {
         updatedGem.setPrice(gem.getPrice());
         updatedGem.setHardness(gem.getHardness());
         updatedGem.setPurity(gem.getPurity());
+        updatedGem.setSort(gem.getSort());
+        updatedGem.setMineral(gem.isMineral());
         gemRepo.save(updatedGem);
 
-        return "Gem with id=" + id + " was updates successfully";
+        return "Gem with id=" + id + " was updated successfully";
     }
 
     public String deleteGemById(Long id) throws GemNotFoundException {
