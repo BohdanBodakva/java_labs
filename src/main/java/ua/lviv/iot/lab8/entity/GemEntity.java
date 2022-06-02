@@ -1,13 +1,12 @@
 package ua.lviv.iot.lab8.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import ua.lviv.iot.lab8.entity.auxiliaryClasses.SuperGem;
 
 import javax.persistence.*;
 
 
 @MappedSuperclass
-public class GemEntity extends SuperGem {
+public class GemEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
