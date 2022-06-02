@@ -1,6 +1,8 @@
 package ua.lviv.iot.lab8.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import ua.lviv.iot.lab8.entity.PreciousGemEntity;
@@ -26,7 +28,6 @@ public class GemController {
 
     private GemService gemService;
 
-    @Autowired
     public GemController(GemService gemService){
         this.gemService = gemService;
     }
@@ -43,11 +44,13 @@ public class GemController {
 
     @GET
     @Path("/{id}")
-    public SuperGem showGemById(@PathParam(value = "id") Long id) {
+    public ResponseEntity<SuperGem> showGemById(@PathParam(value = "id") Long id) {
         try {
-            return gemService.getGemById(id);
+            return new ResponseEntity<SuperGem>(HttpStatus.NOT_FOUND);
+//            return new ResponseEntity<SuperGem>(gemService.getGemById(id), HttpStatus.OK);
         } catch (GemNotFoundException e) {
-            return new WarningGem(e.getMessage());
+            return new ResponseEntity<SuperGem>(HttpStatus.NOT_FOUND);
+//            return new WarningGem(e.getMessage());
         }
     }
 

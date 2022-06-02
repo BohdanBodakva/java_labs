@@ -27,7 +27,6 @@ public class GemService {
 
     private GemRepo gemRepo;
 
-    @Autowired
     public GemService(GemRepo gemRepo){
         this.gemRepo = gemRepo;
     }
