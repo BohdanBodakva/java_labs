@@ -42,7 +42,6 @@ public class RegularExpressionClass {
             }
         }
 
-
         System.out.println(uniqueMissionNames);
         return uniqueMissionNames;
     }
